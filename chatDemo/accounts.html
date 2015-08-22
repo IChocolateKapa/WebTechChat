@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/lib/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/page_head.css"/>
+    <link rel="stylesheet" href="../css/common_index.css"/>
+    <link rel="stylesheet" href="../css/chat/waterfall.css"/>
+    <script src="../js/org/require.js" data-main="../js/module/chat/waterFall"></script>
+    <title>帐号列表</title>
+</head>
+<body>
+<div class="header pf tp0 w_100 tc">
+    <h3 class="fcWhite ffMy fn f26">我的帐号列表，选择2个账户自娱自乐</h3>
+</div>
+<div class="main w_100 pa clearFix">
+
+    <div class="sideBar pr fl h_100 ">
+    </div>
+
+    <div class="main-r fl">
+        <div class="main-r-container pr mbc mt70"></div>
+    </div>
+
+</div>
+
+<div class="fixedBar pf">
+    <span class="loading pa tc fcWhite ffMy f16">加载中...</span>
+</div>
+
+<a href="" class="goTop pa no_unl" title="返回顶部"><i class="fa fa-angle-double-up fa-2x"></i></a>
+
+<div class="fixedSideBar closed"><!--closed-->
+    <i class="fa fa-chevron-circle-down fa-2x">
+        <span class="inlineBlock pr ffMy f16 fc375c84"></span>
+    </i>
+
+    <div class="carContainer">
+        <ul></ul>
+        <a href="chat.html" target="_blank" class="block btn talk no_unl tc">开始聊天吧</a>
+    </div>
+
+
+
+    <div class="switchBar pa bgdWhite tc">
+        <i class="fa fa-chevron-circle-up fa-2x"></i>
+        <span class="tip pa inlineBlock ffMy f10">0</span>
+    </div>
+</div>
+
+<div class="bgdmask"></div>
+<div class="popup">
+    <div class="popupContainer pr clearFix">
+        <div class="popupItem pr fl w_100">
+            <span class="popupItem-l ffMy fc666 f14 inlineBlock fl">昵称：</span>
+            <!--<span class="popupItem-r ffMy fc999 f14 inlineBlock fr">随便给个名字吧</span>-->
+            <!--<i class="pa fa fa-pencil"></i>-->
+            <input class="popupItem-r ffMy fc999 f14 inlineBlock fl" placeholder="随便给个名字吧" autofocus="autofocus" onkeypress="myKeyPress(event)" type="text" value="" name="nickname"/>
+        </div>
+
+        <div class="popupItem pr fl w_100">
+            <span class="popupItem-l ffMy fc666 f14 inlineBlock fl">简介：</span>
+            <!--<span class="popupItem-r ffMy fc999 f14 inlineBlock fl outNone">随便给个名字吧</span>-->
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="个人简介" class="popupItem-r ffMy fc999 f14 inlineBlock fl outNone">
+
+            </textarea>
+            <!--<input type="text" value="" name="nickname"/>-->
+        </div>
+
+        <input type="button" class="btn save" value="保存"/>
+    </div>
+
+</div>
+</body>
+</html>

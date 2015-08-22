@@ -1,0 +1,330 @@
+/**
+ * Created by Administrator on 2015/8/5.
+ */
+@charset "utf-8";
+/*要想使一个divheight沾满浏览器的100%，必须要设置成绝对定位*/
+body{
+    background: #22c3aa;
+}
+.main{
+    width: 100%;
+    height: 100%;
+}
+.main-r{
+    width: 100%;
+    width: 84%;
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+
+}
+.mt70{
+    margin-top: 70px;
+}
+.main-r-container{
+    height: auto;
+}
+
+.section{
+    padding: 15px 0 0 15px;
+    z-index: 10;
+    position: relative;
+}
+
+.pic{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px dashed #ccc;
+    box-shadow: 0 0 5px #999;
+    cursor: pointer;
+    background: white;
+}
+
+.pic img{
+    width: 240px;
+    height: auto;
+}
+
+.section-before{
+    content: "选中";
+    font-size: 12px;
+    text-align: center;
+    font-family: "Microsoft Yahei";
+    color: #ffffff;
+    position: absolute;
+    opacity: 0.2;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    top: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, .3);
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    cursor: pointer;
+    z-index: 99;
+}
+.section:hover{
+    z-index: 99;
+}
+.section-before.selected{
+    opacity: 1;
+    /*color: #00b07b;*/
+    color: orangered;
+    background: #27877f;
+}
+.section:hover .section-before{
+    opacity: 1;
+    /*color: red;*/
+
+}
+.section:target::before{
+    color: red;
+}
+
+
+.fixedBar{
+    z-index: 101;
+    width: 1px;
+    height: 1px;
+    left: 50%;
+    margin-left: -100px;
+    bottom: 100px;
+    
+}
+.loading{
+    display: inline-block;
+    /*visibility: visible;*/
+    visibility: hidden;
+    cursor: pointer;
+    line-height: 50px;
+    width: 500px;
+    /*left: ;*/
+    letter-spacing: .1em;
+    background: rgba(0, 0, 0, .7);
+}
+.goTop{
+    display: inline-block;
+    visibility: hidden;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 55px;
+    background: rgba(137, 154, 68, .9);
+    line-height: 50px;
+    text-align: center;
+    right: 5px;
+    z-index: 103;
+}
+.goTop i{
+    position: relative;
+    /*top: 9px;*/
+    /*top: 5px;*/
+    color: #ffffff;
+    animation: spark .6s linear infinite;
+    -webkit-animation: spark .6s linear infinite;
+}
+
+@keyframes spark {
+    from{top: 9px;}
+    to{top: 5px;}
+}
+@-webkit-keyframes spark {
+    from{top: 9px;}
+    to{top: 5px;}
+}
+
+.flyImg{
+    top: 40px;
+    margin-top: -30px;
+    left: 200px;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    z-index: 1000;
+    border: 1px solid white;
+}
+.flyImg img{
+    height: 60px;
+    width: 60px;
+}
+
+.fixedSideBar{
+    z-index: 100;
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    border-left: 1px solid #22c3aa;
+    cursor: pointer;
+    background: rgba(255, 255, 255, .9);
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transform-origin: bottom right;
+}
+.fixedSideBar>i{
+    display: block;
+    color: rgba(137, 154, 68, 1);
+    position: absolute;
+    right: -10px;
+    top: 70px;
+}
+.fixedSideBar>i span{
+    line-height: 50px;
+    top: -5px;
+    left: -150px;
+}
+.closed>i{
+    display: none;
+}
+.closed{
+    border-left: 1px solid transparent;
+    height: 50px;
+    width: 150px;
+    right: 0;
+    bottom: 0;
+}
+.closed .switchBar{
+    display: block;
+}
+.switchBar{
+    display: none;
+    width: 150px;
+    height: 50px;
+    left: 50%;
+    margin-left: -75px;
+    top: 50%;
+    margin-top: -25px;
+}
+.switchBar i{
+    color: rgba(137, 154, 68, 1);
+    line-height: 50px;
+    margin-right: 27px;
+}
+.tip{
+    width: 27px;
+    background: rgba(137, 154, 68, 1);
+    border-radius: 50%;
+    line-height: 27px;
+    color: white;
+    right: 25px;
+    top: 50%;
+    margin-top: -13.5px;
+}
+
+.carContainer{
+    width: 100%;
+    padding:  10% 5px;
+    /*background: red;*/
+    height: 90%;
+    margin-top: 120px;
+    border-top: dotted 1px #999;
+}
+
+.carContainer li{
+    padding: 5px 5px;
+}
+.carContainer li a{
+    margin: auto;
+    display: block;
+    padding: 5px 10px;
+    background: rgba(137, 154, 68, .7);
+    width: 250px;
+    height: 220px;
+    border-radius: 50%;
+}
+.carContainer li a img{
+    height: 220px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.popup{
+    position: fixed;
+    width: 400px;
+    height: 480px;
+    left: 50%;
+    margin-left: -200px;
+    top: -60%;
+    margin-top: -300px;
+    transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    /*background: red;*/
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6px;
+    box-shadow: 0 0 15px 15px rgba(99, 99, 99, .5);
+    padding: 10px;
+    z-index: 20000;
+}
+.popup.show{
+    top: 50%;
+    margin-top: -240px;
+}
+.popupContainer{
+    width: 80%;
+    left: 40%;
+    margin-left: -135px;
+    padding: 15px;
+}
+.popupItem{
+    /*height: 80px;*/
+    /*border-bottom: 1px dotted #999999;*/
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.popupItem i{
+    color: #999999;
+    top: 3px;
+    right: 8px;
+}
+.popupItem i:hover{
+    color: #4E96F1;
+}
+.popupItem-l{
+    width: 25%;
+    line-height: 32px;
+}
+.popupItem-r{
+    width: 70%;
+    white-space: pre-line;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 0 3px 10px 3px;
+    line-height: 100%;
+}
+span.popupItem-r{
+    line-height: 32px;
+}
+input.popupItem-r{
+    /*border: 1px solid #999999;*/
+    border: 1px solid rgba(99, 99, 99, .2);
+    line-height: 32px;
+    text-indent: 10px;
+    color: #999999;
+    padding: 0;
+}
+textarea.popupItem-r{
+    resize: none;
+    border: 1px solid rgba(99, 99, 99, .2);
+    line-height: 23px;
+}
+.save{
+    width: 100%;
+    margin: 10% auto;
+    cursor: pointer;
+}
+.talk{
+    width: 100%;
+    margin: 10px auto;
+}
+
+.bgdmask{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+    z-index: 19990;
+    display: none;
+}
