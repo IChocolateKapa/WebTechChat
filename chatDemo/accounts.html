@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="../css/chat/waterfall.css"/>
     <script src="../js/org/require.js" data-main="../js/module/chat/waterFall"></script>
     <title>帐号列表</title>
+    <script>
+        if(navigator.geolocation){
+            alert("support geolocation！");
+            var loc = navigator.geolocation.getCurrentPosition();
+            alert(loc)
+        }
+    </script>
 </head>
 <body>
 <div class="header pf tp0 w_100 tc">
