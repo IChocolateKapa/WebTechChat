@@ -10,23 +10,23 @@
     <script src="../js/org/require.js" data-main="../js/module/chat/waterFall"></script>
     <title>帐号列表</title>
     <script>
-//        if(navigator.geolocation){
-//            var loc = navigator.geolocation.getCurrentPosition();
-//        }
-        function getNewArr(arr){
+        //        if(navigator.geolocation){
+        //            var loc = navigator.geolocation.getCurrentPosition();
+        //        }
+        function getNewArr(arr) {
 
             var temArr = new Array();
 
             var lenN = Math.floor(arr.length / 2);
-            for(var i = 0; i < lenN; i++){
+            for (var i = 0; i < lenN; i++) {
                 var j = 1;
-                while(j > -1){
-                    temArr.push(arr[2*i + j]);
+                while (j > -1) {
+                    temArr.push(arr[2 * i + j]);
                     j--;
                 }
             }
 
-            if(arr.length % 2 != 0){
+            if (arr.length % 2 != 0) {
                 var lastItem = arr.slice(-1);
                 temArr.push(lastItem[0]);
             }
@@ -35,9 +35,29 @@
         }
 
 
-        console.log(getNewArr([0]))
-        console.log(getNewArr([0,1,2,3,4,5,6,7]))
-        console.log(getNewArr([0,1,2,3,4,5,6,7,8]))
+        //        console.log(getNewArr([0]))
+        //        console.log(getNewArr([0,1,2,3,4,5,6,7]))
+        //        console.log(getNewArr([0,1,2,3,4,5,6,7,8]))
+
+        /*还是林林的第二种方法效率更好点*/
+        function getArr2(arr) {
+            var tArr = [];
+            for (var i = 0; i < arr.length; i = i + 2) {
+                if (i == arr.length - 1) {
+                    tArr[i] = arr[i];
+                    break;
+                }
+                tArr[i] = arr[i + 1];
+                tArr[i + 1] = arr[i];
+
+            }
+
+            return tArr;
+        }
+
+        console.log(getArr2([0]));
+        console.log(getArr2([0, 1, 2, 3, 4, 5, 6, 7]));
+        console.log(getArr2([0, 1, 2, 3, 4, 5, 6, 7, 8]))
     </script>
 </head>
 <body>
@@ -72,7 +92,6 @@
     </div>
 
 
-
     <div class="switchBar pa bgdWhite tc">
         <i class="fa fa-chevron-circle-up fa-2x"></i>
         <span class="tip pa inlineBlock ffMy f10">0</span>
@@ -86,13 +105,15 @@
             <span class="popupItem-l ffMy fc666 f14 inlineBlock fl">昵称：</span>
             <!--<span class="popupItem-r ffMy fc999 f14 inlineBlock fr">随便给个名字吧</span>-->
             <!--<i class="pa fa fa-pencil"></i>-->
-            <input class="popupItem-r ffMy fc999 f14 inlineBlock fl" placeholder="随便给个名字吧" autofocus="autofocus" onkeypress="myKeyPress(event)" type="text" value="" name="nickname"/>
+            <input class="popupItem-r ffMy fc999 f14 inlineBlock fl" placeholder="随便给个名字吧" autofocus="autofocus"
+                   onkeypress="myKeyPress(event)" type="text" value="" name="nickname"/>
         </div>
 
         <div class="popupItem pr fl w_100">
             <span class="popupItem-l ffMy fc666 f14 inlineBlock fl">简介：</span>
             <!--<span class="popupItem-r ffMy fc999 f14 inlineBlock fl outNone">随便给个名字吧</span>-->
-            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="个人简介" class="popupItem-r ffMy fc999 f14 inlineBlock fl outNone">
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="个人简介"
+                      class="popupItem-r ffMy fc999 f14 inlineBlock fl outNone">
 
             </textarea>
             <!--<input type="text" value="" name="nickname"/>-->
