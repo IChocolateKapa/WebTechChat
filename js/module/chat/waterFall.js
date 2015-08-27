@@ -46,7 +46,7 @@ require(['jquery', 'jqueryui', 'waterFallFunction', 'window', 'eventUtil'], func
                             index1 = jsval[dd].length;
                         }
                         j += 1;
-                        $(".carContainer ul").append("<li><a href=''><img src='../../../images/"
+                        $(".carContainer ul").append("<li><a href=''><img src='../images/"
                             + jsval[dd].substring(0, index1) + ".jpg' /></a></li>")
                     }
                 }
