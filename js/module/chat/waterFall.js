@@ -20,40 +20,10 @@ require(['jquery', 'jqueryui', 'waterFallFunction', 'window', 'eventUtil'], func
 
     $(function(){
 
+
         $(".main-r-container").load("accountsTem.html");
         $(".sideBar").load("sideBarTem.html");
 
-        /*返回顶部*/
-        $(".goTop i").click(function(){
-            $(window).scrollTop(0);
-            //$('html,body').animate({"scrollTop": "0"}, 1000)
-        })
-
-        /*展开右边购物车*/
-        $(".fixedSideBar").on("click", ".switchBar", function(){
-            var storage = window.localStorage;
-            var pl = storage.getItem('peopleList');
-            $(".fixedSideBar").removeClass("closed");
-            $(".fixedSideBar>i span").html(wfn.getObjectLen(JSON.parse(pl)));
-            if(pl){
-                var j = 0;
-                var jsval = JSON.parse(pl);
-                $(".carContainer ul").html('');
-                for(var dd in jsval){
-                    if(jsval[dd] != null){
-                        var index1 = jsval[dd].indexOf("+");
-                        if(index1 == -1){
-                            index1 = jsval[dd].length;
-                        }
-                        j += 1;
-                        $(".carContainer ul").append("<li><a href=''><img src='../images/"
-                            + jsval[dd].substring(0, index1) + ".jpg' /></a></li>")
-                    }
-                }
-            }
-
-
-        })
 
         $(".fixedSideBar>i").click(function(){
             $(".fixedSideBar").addClass("closed");
@@ -111,6 +81,7 @@ require(['jquery', 'jqueryui', 'waterFallFunction', 'window', 'eventUtil'], func
             /*阻止默认行为*/
             evet.preventDefault(event);
         })
+
         $(".save").on("click", function(){
             var dsrc = $(".popup").attr("data-item");
             var dsrc_s = dsrc.substring(20, dsrc.indexOf(".jpg"));
@@ -136,12 +107,20 @@ require(['jquery', 'jqueryui', 'waterFallFunction', 'window', 'eventUtil'], func
             $(".popup").removeClass("show");
         })
 
+
+        /*返回顶部*/
+        $(".goTop i").click(function(){
+            //$(window).scrollTop(0);
+            $('html,body').animate({"scrollTop": "0"}, 1000)
+        })
+
     })
 
     $(window).resize(function(){
         wfn.waterFall();
     })
 
+    /*这里需要降频去抖吗？*/
     $(window).scroll(function(){
 
         var scrTop = $(window).scrollTop();
@@ -151,6 +130,8 @@ require(['jquery', 'jqueryui', 'waterFallFunction', 'window', 'eventUtil'], func
             $(".goTop").css({"visibility": "hidden"})
         }
         var flag = wfn.checkScrollSlide();
+        //alert("flag: ", flag);
+
         if(flag){
             $(".loading").css({"visibility": "visible"});
             setTimeout(function(){
