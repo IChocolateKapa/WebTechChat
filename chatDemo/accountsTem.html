@@ -170,7 +170,6 @@
             /*点击小人时，把当前图片加入购物车*/
             /*jQuery 使用on绑定动态生成的元素时，不能直接用该对象操作，
              而是选择其非动态生成的父节点然后再找到本身才能达到效果。*/
-//            $(".section-before").click(function(){
             $(".main-r-container").on("click", ".section-before", function(){
                 var $this = $(this);
                 var total = parseInt($(".tip").html());
@@ -236,7 +235,7 @@
                                 index1 = jsval[dd].length;
                             }
                             j += 1;
-                            $(".carContainer ul").append("<li><a href=''><img src='../images/"
+                            $(".carContainer ul").append("<li><a href='javascript:void(0)'><img src='../images/"
                                     + jsval[dd].substring(0, index1) + ".jpg' /></a></li>")
                         }
                     }
