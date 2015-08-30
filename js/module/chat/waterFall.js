@@ -30,20 +30,6 @@ require(['jquery', 'jqueryui', 'waterFallFunction', 'window', 'eventUtil'], func
         })
 
 
-        /*修改昵称*/
-        /*$("span.popupItem-r, .popupItem i").click(function(){
-            var $this = $(this);
-            $this.hide();
-            $this.next("i").hide();
-            $this.parents().children("input").removeClass("none").show().focus();
-        })
-        $("input.popupItem-r").on("changde, blur", function(){
-            var $this = $(this);
-            console.log($this.attr("value"));
-            $this.parent().children("span.popupItem-r").html($this.attr("value")).css({display: "inlineBlock"});
-            $this.prev("i").show();
-            $this.hide();
-            });*/
         $(".carContainer").on("click", "li", function(){
             /*动画结束之后开始设定身份*/
             var $this = $(this);
