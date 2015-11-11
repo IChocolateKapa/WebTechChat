@@ -1,0 +1,28 @@
+//
+   Created by Echo on 2015/11/11.
+
+
+extends _template
+
+mixin pets(pets)
+    ul.pets
+        - each pet in pets
+            li= pet
+mixin profile(user)
+    .user
+        h2= user.name
+        mixin pets(user.pets)
+
+block content
+    p mixin测试23为
+    - var user = {name: "Echo", pets: ['bird', 'dog', 'cat']}
+    p #{user.name}
+    mixin pets(pets)
+        ul.pets
+            each pet in pets
+                li= pet
+    //+pets(['cat', 'dog', 'pig'])
+    +profile(user)
+
+    
+

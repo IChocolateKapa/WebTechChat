@@ -1,0 +1,54 @@
+//
+   Created by echo on 2015/11/11.
+
+doctype html
+html
+    block head
+    body
+        //block content
+        - var title = 'yay'
+        - var title2 = 'title2222'
+        - var title3 = '324534355555554'
+        - if (title != title2)
+            h1 #{title}
+            h1 #{title2}
+        - else
+            h1 #{title3}
+        //h1.title #{title}
+        p Just an examplee
+
+        // - 表示不会被编译， 支持js代码
+        - foo = 'bar'
+        if foo == 'bar'
+            ul
+                li yay
+                li foo
+                li worked
+        else
+            p oh no! didnt work
+
+        - var items = ["one", "two", "three"]
+        ul
+            each item in items
+                li= item
+        - var items2 = ["one1", "two1", "three1"]
+        ul
+            each item, i in items2
+                li #{item}: #{i}
+                //li= item
+                //li= i
+
+         - var obj1 = {name: 'Echo', age: 25, 'gender': 'female'};
+        each item in obj1
+            li= item
+
+         - var obj2 = [{name: 'Echo', age: 25, 'gender': 'female'},{name: 'Echo2', age: 26, 'gender': 'female2'}, {name: 'Echo3', age: 27, 'gender': 'female4'}];
+        each item in obj2
+            ul
+                each ii in item
+                    li= ii
+//block extends content
+//    p.bc 1·213342322
+//    - var title = 'yay'
+//    h1.title #{title}
+//    p Just an examplee

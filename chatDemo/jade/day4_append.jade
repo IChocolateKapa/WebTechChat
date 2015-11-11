@@ -1,0 +1,14 @@
+//
+   Created by echo on 2015/11/11.
+
+extends _template
+
+block append head
+    script(src="../../js/common/common-event.js")
+
+block prepend head
+    link(rel="styleSheet", href="../../css/lib/css/font-awesome.css")
+
+block content
+    - var title = "百变变比百变"
+    h1= title
