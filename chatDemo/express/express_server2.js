@@ -38,7 +38,31 @@ app.get('/ab*cd', function(req, res) {
     console.log("/ab*cd GET 请求");
     //res.send('正则匹配');
     res.render(__dirname  + "/demo/day6_mixin",
-        {name: "EchoEcho Echo"}
+        {
+            name: "Echo",
+            age: "24",
+            'collegues': [
+                {
+                    'name': "liushaohua",
+                    'gender': "male",
+                    'age': '26'
+                },
+                {
+                    'name': "wangsonglin",
+                    'gender': "male",
+                    'age': '28'
+                },
+                {
+                    'name': "lishanzhi",
+                    'gender': "female",
+                    'age': '25'
+                },
+                {
+                    'name': "gaicuisha",
+                    'gender': "female",
+                    'age': '26'
+                }
+        ]}
         );
 });
 

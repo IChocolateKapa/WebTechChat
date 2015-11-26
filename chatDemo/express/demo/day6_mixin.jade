@@ -26,14 +26,14 @@ block content
     //+pets(['cat', 'dog', 'pig'])
     +profile(user)
 
-    h1 #{name}
-    //script.
-    //    window.hotels = !{JSON.stringify(hotels)};
-    //
-    //- each cc in window.hotels
-    //    li name: #{cc.name}
-    //    li gender: #{cc.gender}
-    //    li age: #{cc.age}
+    h1 姓名: #{name}
+    h1 年龄: #{age}
+
+    script.
+        var col = #{name}
+        document.write(col)
+
+
 
     
 
