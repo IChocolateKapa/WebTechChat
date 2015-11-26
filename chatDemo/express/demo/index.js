@@ -8,8 +8,5 @@ $(function(){
            index = $(this).index();
        $(".nav-list-item").removeClass("curr").eq(index).addClass("curr");
        $(".container .section").removeClass("curr").eq(index).addClass("curr");
-
-
-
    })
 });

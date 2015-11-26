@@ -52,9 +52,25 @@ header nav{
 .container{
     width: 960px;
     height: 600px;
+    margin: 0 auto;
     border: 1px dashed wheat;
 }
 .container .section{
     height: 100%;
     width: 100%;
+    text-align: center;
+    display: none;
+    transition: all .3s linear 0s;
+    -webkit-transition: all .3s linear 0s;
+    -o-transition: all .3s linear 0s;
+    -ms-transition: all .3s linear 0s;
+    -moz-transition: all .3s linear 0s;
+}
+section,
+figure{
+    padding: 0;
+}
+.container .section.curr{
+    display: block;
+    background: greenyellow;
 }
