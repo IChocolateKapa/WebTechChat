@@ -1,0 +1,60 @@
+html{
+    font-family: 'Microsoft Yahei';
+}
+body,
+ul{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+.wrap{
+    width: 100%;
+    height: auto;
+}
+header nav{
+    height: 60px;
+    width: 960px;
+    margin: 0 auto;
+}
+.nav-list{
+    height: 60px;
+    width: 100%;
+}
+.nav-list-item{
+    display: inline-block;
+    float: left;
+    width: 25%;
+    height: 100%;
+    background: #c2a5b2;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 1px 1px white;
+    transition: all .3s linear 0s;
+    -webkit-transition: all .3s linear 0s;
+    -moz-transition: all .3s linear 0s;
+    -ms-transition: all .3s linear 0s;
+    -o-transition: all .3s linear 0s;
+}
+.nav-list-item.curr{background: #00b07b;}
+.nav-list-item:hover{
+    background: #00b07b;
+}
+.nav-list-item a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 14px;
+}
+
+.container{
+    width: 960px;
+    height: 600px;
+    border: 1px dashed wheat;
+}
+.container .section{
+    height: 100%;
+    width: 100%;
+}
